@@ -26,17 +26,24 @@ bookForm.addEventListener('submit', (event)=> {
     const bookRead = document.getElementById('read').value;
     const newBook = {title : bookTitle, author: bookAuthor, pages: bookPages, read: bookRead};
     myLibrary.addBook(newBook);//use method created with prototype
-    bookForm.reset();
-    bookForm.style.display = 'none';
+    bookForm.reset();//resets form after submission
+    bookForm.style.display = 'none'; //makes form dissapear after submission
+    addBookToLibrary(newBook)
     
 })
 
+//function that creates a div with the content input from the user
+//and appends it to the main div
+function addBookToLibrary (book){
+    const bookDiv = document.createElement('div')
+    bookDiv.innerHTML = `<div>Title: ${book.title} <br> Author: ${book.author} <br> Pages: ${book.pages} <br> Read Status: ${book.read}</div>`
+    bookCatalog.appendChild(bookDiv)
+}
 
 
-
-
+//loops through the array displaying all books
 myLibrary.forEach(book => {
-    bookCatalog.innerHTML += `<div>${book.title} by: ${book.author} pages: ${book.pages} read status: ${book.read}</div>`
+    bookCatalog.innerHTML += `<div>Title: ${book.title} <br> Author: ${book.author} <br> Pages: ${book.pages} <br> Read Status: ${book.read}</div>`
 })
 
 
