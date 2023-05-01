@@ -1,6 +1,6 @@
 let myLibrary = [
-    {title: "A song of Ice and Fire", author: 'George RR Martin', pages: '300', read: 'finished'},
-    {title: "Harry Potter", author: 'JK Rowling', pages: '300', read: 'in progress'}
+    {title: "A song of Ice and Fire", author: 'George RR Martin', pages: '300', read: 'Finished'},
+    {title: "Harry Potter", author: 'JK Rowling', pages: '300', read: 'In Progress'}
 ]
 let bookCatalog = document.querySelector('.book-catalog')
 const newBookBtn = document.querySelector('.new-book-btn')
@@ -36,14 +36,14 @@ bookForm.addEventListener('submit', (event)=> {
 //and appends it to the main div
 function addBookToLibrary (book){
     const bookDiv = document.createElement('div')
-    bookDiv.innerHTML = `<div>Title: ${book.title} <br> Author: ${book.author} <br> Pages: ${book.pages} <br> Read Status: ${book.read}</div>`
+    bookDiv.innerHTML = `<div class='new-book'><h1>Title: ${book.title} <br> Author: ${book.author} <br> Pages: ${book.pages} <br> Read Status: ${book.read}</h1></div>`
     bookCatalog.appendChild(bookDiv)
 }
 
 
 //loops through the array displaying all books
 myLibrary.forEach(book => {
-    bookCatalog.innerHTML += `<div>Title: ${book.title} <br> Author: ${book.author} <br> Pages: ${book.pages} <br> Read Status: ${book.read}</div>`
+    bookCatalog.innerHTML += `<div class='initialBooks'><h1>Title: ${book.title} <br> Author: ${book.author} <br> Pages: ${book.pages} <br> Read Status: ${book.read}</h1></div>`
 })
 
 
