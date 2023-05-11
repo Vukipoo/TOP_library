@@ -5,6 +5,8 @@ let myLibrary = [
 let bookCatalog = document.querySelector('.book-catalog')
 const newBookBtn = document.querySelector('.new-book-btn')
 const bookForm = document.querySelector('.book-form')
+const errorElement = document.querySelector('#error')
+
 
 
 Array.prototype.addBook = function(book) {
@@ -45,6 +47,5 @@ function addBookToLibrary (book){
 myLibrary.forEach(book => {
     bookCatalog.innerHTML += `<div class='initialBooks'><h1>Title: ${book.title} <br> Author: ${book.author} <br> Pages: ${book.pages} <br> Read Status: ${book.read}</h1></div>`
 })
-
 
 
